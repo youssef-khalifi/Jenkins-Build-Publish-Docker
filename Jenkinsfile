@@ -17,6 +17,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'cd Jenkins-Build-Publish-Docker'
                 sh 'mvn clean test package'
                 sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
                   }
