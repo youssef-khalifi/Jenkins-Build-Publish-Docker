@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.mycompany.app.AppTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.mycompany.app.AppTest" time="0.004" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.10+7-Ubuntu-122.04.1"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/youssef/Desktop/maven-app/my-app"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/ussf/Work/Jenkins-Build-Publish-Docker"/>
     <property name="java.vm.vendor" value="Private Build"/>
     <property name="java.vendor.url" value="Unknown"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/youssef/Desktop/maven-app/my-app"/>
+    <property name="user.dir" value="/home/ussf/Work/Jenkins-Build-Publish-Docker"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="17.0.10+7-Ubuntu-122.04.1"/>
     <property name="os.arch" value="amd64"/>
@@ -32,11 +32,11 @@
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="5.15.0-100-generic"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
-    <property name="user.home" value="/home/youssef"/>
+    <property name="user.home" value="/home/ussf"/>
     <property name="user.timezone" value="Etc/UTC"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="17"/>
-    <property name="user.name" value="youssef"/>
+    <property name="user.name" value="ussf"/>
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
@@ -57,5 +57,5 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.stdout.encoding" value="UTF-8"/>
   </properties>
-  <testcase classname="com.mycompany.app.AppTest" name="shouldAnswerWithTrue" time="0.002"/>
+  <testcase classname="com.mycompany.app.AppTest" name="shouldAnswerWithTrue" time="0.004"/>
 </testsuite>
