@@ -1,28 +1,31 @@
-pipeline {
-    agent any
-    
+node {
+    // Set Jenkins URL environment variable
     environment {
-        // Define the base URL for Jenkins
-        JENKINS_URL = 'https://cb46-105-73-96-20.ngrok-free.app'
+        JENKINS_URL = 'https://466a-105-73-96-20.ngrok-free.app'
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                // clean the directory
-                sh "rm -rf *"
-                // Checkout the Git repository
-                sh "git clone https://github.com/youssef-khalifi/Jenkins-Build-Publish-Docker.git"
-            }
+    stage('Clone') {
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/youssef-khalifi/Jenkins-Build-Publish-Docker.git'
+    }
+
+    stage('Build') {
+        sh 'mvn clean'
+        sh 'mvn install'
+    }
+
+    stage('Run') {
+        sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
+    }
+
+   /* stage('Notify Slack') {
+        script {
+            // Artifact path relative to the workspace
+            def artifactPath = "target/my-app-1.0-SNAPSHOT.jar"
+            def artifactURL = "${env.JENKINS_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/${artifactPath}"
+
+            slackSend channel: 'jenkins',
+                      message: "Un nouveau build Java est disponible: ---> Resultat: ${currentBuild.currentResult}, Job: ${env.JOB_NAME}, Build: ${env.BUILD_NUMBER} \n <${artifactURL}|Cliquer ici pour télécharger>"
+            
         }
-        stage('Build') {
-            steps {
-                sh 'cd Jenkins-Build-Publish-Docker'
-                sh 'ls '
-                  }
-                    
-                   
-                }
-            }
-        }
-        
+    }*/
+}
