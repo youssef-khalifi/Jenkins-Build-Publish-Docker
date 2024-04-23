@@ -1,7 +1,7 @@
 node {
     // Set Jenkins URL environment variable
     environment {
-        JENKINS_URL = 'http://192.168.213.131:8080'
+        J_URL = 'https://cb46-105-73-96-20.ngrok-free.app'
     }
 
     stage('Clone') {
@@ -21,7 +21,7 @@ node {
         script {
             // Artifact path relative to the workspace
             def artifactPath = "target/my-app-1.0-SNAPSHOT.jar"
-            def artifactURL = "${env.JENKINS_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/${artifactPath}"
+            def artifactURL = "${env.J_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/${artifactPath}"
 
             slackSend channel: 'jenkins',
                       message: "Un nouveau build Java est disponible: ---> Resultat: ${currentBuild.currentResult}, Job: ${env.JOB_NAME}, Build: ${env.BUILD_NUMBER} \n <${artifactURL}|Cliquer ici pour télécharger>"
