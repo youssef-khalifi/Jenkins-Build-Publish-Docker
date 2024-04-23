@@ -17,7 +17,7 @@ node {
         sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
     }
 
-   /* stage('Notify Slack') {
+    stage('Notify Slack') {
         script {
             // Artifact path relative to the workspace
             def artifactPath = "target/my-app-1.0-SNAPSHOT.jar"
@@ -27,5 +27,5 @@ node {
                       message: "Un nouveau build Java est disponible: ---> Resultat: ${currentBuild.currentResult}, Job: ${env.JOB_NAME}, Build: ${env.BUILD_NUMBER} \n <${artifactURL}|Cliquer ici pour télécharger>"
             
         }
-    }*/
+    }
 }
