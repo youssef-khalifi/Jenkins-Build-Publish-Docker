@@ -20,7 +20,7 @@ node {
     stage('Notify Slack') {
         script {
             // Artifact path relative to the workspace
-            def artifactPath = "target/my-app-1.0-SNAPSHOT.jar"
+            def artifactPath = "Work/Jenkins-Build-Publish-Docker/target/my-app-1.0-SNAPSHOT.jar"
             def artifactURL = "${env.JENKINS_URL}job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/${artifactPath}"
 
             slackSend channel: 'jenkins',
