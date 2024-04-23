@@ -12,4 +12,16 @@ node {
     stage('Run') {
     sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
     }
+    stage('Notify Slack'){
+        steps {
+            script {
+                def artifactPath = "/Work/Jenkins-Build-Publish-Docker/target/my-app-1.0-SNAPSHOT.jar"
+                def artifactURL = "${env.JENKINS_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/${artifactPath}"
+
+                //Add channel name
+                slackSend channel: 'jenkins',
+                message: "Un nouveau build Java est disponible: ---> Resultat: ${currentBuild.currentResult}, Job: ${env.JOB_NAME}, Build: ${env.BUILD_NUMBER} \n <${artifactURL}|Cliquer ici pour télécharger>"
+            }
+        }
+    }
 }
