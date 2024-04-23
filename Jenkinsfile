@@ -1,4 +1,7 @@
 node {
+    environment {
+        JENKINS_URL = 'https://466a-105-73-96-20.ngrok-free.app'
+    }
     stage('Clone') {
     git branch: 'main', credentialsId: 'github', url: 'https://github.com/youssef-khalifi/Jenkins-Build-Publish-Docker.git'
     }
