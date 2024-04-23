@@ -1,7 +1,7 @@
 node {
     // Set Jenkins URL environment variable
     environment {
-        JENKINS_URL = 'https://466a-105-73-96-20.ngrok-free.app'
+        JENKINS_URL = 'http://192.168.213.131:8080'
     }
 
     stage('Clone') {
